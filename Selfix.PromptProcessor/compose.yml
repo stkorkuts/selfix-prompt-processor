@@ -1,0 +1,44 @@
+﻿networks:
+  selfix-net:
+    external: true
+    name: selfix-net
+
+services:
+  prompt-processor:
+    networks:
+      - selfix-net
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: prompt-processor
+    container_name: prompt-processor
+    environment:
+      - DOTNET_ENVIRONMENT=${DOTNET_ENVIRONMENT:-Local}
+      - MODEL_PATH=${MODEL_PATH:-/workspace/models/llm/saiga_yandexgpt_8b_gptq_8bit}
+
+      - Kafka__BootstrapServer=${KAFKA_BOOTSTRAP_SERVER:-broker:29092}
+      - Kafka__Sasl__KafkaSecurityProtocol=${KAFKA_SECURITY_PROTOCOL:-PLAINTEXT}
+      - Kafka__Sasl__KafkaSaslMechanism=${KAFKA_SASL_MECHANISM:-PLAIN}
+      - Kafka__Sasl__Username=${KAFKA_SASL_USERNAME:-}
+      - Kafka__Sasl__Password=${KAFKA_SASL_PASSWORD:-}
+      - Kafka__GroupId=${KAFKA_GROUP_ID:-selfix}
+      - Kafka__TopicInput=${KAFKA_TOPIC_INPUT:-selfix.prompt.process.requests}
+      - Kafka__TopicOutput=${KAFKA_TOPIC_OUTPUT:-selfix.prompt.process.responses}
+      
+      - Vllm__Host=${VLLM_HOST:-localhost}
+      - Vllm__Port=${VLLM_PORT:-8000}
+      - Vllm__MaxTokens=${VLLM_MAX_TOKENS:-256}
+      - Vllm__Temperature=${VLLM_TEMPERATURE:-0.5}
+      - Vllm__IsHighVram=${VLLM_IS_HIGH_VRAM:-false}
+      - Vllm__LoraKeyWord=${VLLM_LORA_KEY_WORD:-GNAVTRTKN}
+        
+    volumes:
+      - ${ML_MODELS_PATH:-./models}:/workspace/models:ro
+        
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

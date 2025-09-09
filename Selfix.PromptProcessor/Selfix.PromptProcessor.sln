@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selfix.PromptProcessor.EntryPoint", "Selfix.PromptProcessor.EntryPoint\Selfix.PromptProcessor.EntryPoint.csproj", "{5C39EF20-EF74-477A-86B4-70858949F091}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DC202B50-2E2C-404E-8964-AF99EFDDA854}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yml = compose.yml
+		Dockerfile = Dockerfile
+		.dockerignore = .dockerignore
+		.env = .env
+		.env.example = .env.example
+		Scripts\entrypoint.sh = Scripts\entrypoint.sh
+		Scripts\start-vllm.sh = Scripts\start-vllm.sh
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selfix.PromptProcessor.Shared", "Selfix.PromptProcessor.Shared\Selfix.PromptProcessor.Shared.csproj", "{AE063EAF-233E-49B0-9B80-6DD35838CF82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selfix.PromptProcessor.Infrastructure", "Selfix.PromptProcessor.Infrastructure\Selfix.PromptProcessor.Infrastructure.csproj", "{6FC8CDFE-CFA2-4D07-844D-9647658468D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selfix.PromptProcessor.Application", "Selfix.PromptProcessor.Application\Selfix.PromptProcessor.Application.csproj", "{ECADA7ED-32CE-4FA8-918A-6E4754D1C7D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selfix.Schema", "Submodules\Selfix.Schema\Selfix.Schema\Selfix.Schema.csproj", "{2DBFBECD-2ECF-4824-A637-DCE65FE107AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C39EF20-EF74-477A-86B4-70858949F091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C39EF20-EF74-477A-86B4-70858949F091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C39EF20-EF74-477A-86B4-70858949F091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C39EF20-EF74-477A-86B4-70858949F091}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE063EAF-233E-49B0-9B80-6DD35838CF82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE063EAF-233E-49B0-9B80-6DD35838CF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE063EAF-233E-49B0-9B80-6DD35838CF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE063EAF-233E-49B0-9B80-6DD35838CF82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FC8CDFE-CFA2-4D07-844D-9647658468D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FC8CDFE-CFA2-4D07-844D-9647658468D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FC8CDFE-CFA2-4D07-844D-9647658468D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FC8CDFE-CFA2-4D07-844D-9647658468D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECADA7ED-32CE-4FA8-918A-6E4754D1C7D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECADA7ED-32CE-4FA8-918A-6E4754D1C7D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECADA7ED-32CE-4FA8-918A-6E4754D1C7D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECADA7ED-32CE-4FA8-918A-6E4754D1C7D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DBFBECD-2ECF-4824-A637-DCE65FE107AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DBFBECD-2ECF-4824-A637-DCE65FE107AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DBFBECD-2ECF-4824-A637-DCE65FE107AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DBFBECD-2ECF-4824-A637-DCE65FE107AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

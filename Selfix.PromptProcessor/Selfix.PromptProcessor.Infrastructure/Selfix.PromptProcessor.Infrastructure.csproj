@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MassTransit.Kafka" Version="8.4.0" />
+      <PackageReference Include="Serilog.Extensions.Hosting" Version="9.0.0" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Selfix.PromptProcessor.Application\Selfix.PromptProcessor.Application.csproj" />
+      <ProjectReference Include="..\Selfix.PromptProcessor.Shared\Selfix.PromptProcessor.Shared.csproj" />
+      <ProjectReference Include="..\Submodules\Selfix.Schema\Selfix.Schema\Selfix.Schema.csproj" />
+    </ItemGroup>
+
+</Project>
